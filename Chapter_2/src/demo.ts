@@ -1,14 +1,19 @@
-// Type alias
-type ContactName = string; // If I wanted to change all ContactName references
+enum ContactStatus {
+    Active,
+    Inactive,
+    New,
+};
 
 interface Contact {
     id: number;
-    name: ContactName;
+    name: string;
     birthDate?: Date; // This property is optional
+    status: ContactStatus;
 };
 
 let primaryContact: Contact = {
     birthDate: new Date('01-01-1990'),
     id: 12345,
     name: 'John Doe',
+    status: ContactStatus.Active,
 };
