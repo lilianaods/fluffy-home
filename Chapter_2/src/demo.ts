@@ -1,7 +1,7 @@
 enum ContactStatus {
-    Active,
-    Inactive,
-    New,
+    Active = 'active',
+    Inactive = 'inactive',
+    New = 'new',
 };
 
 interface Contact {
