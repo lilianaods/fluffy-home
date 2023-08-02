@@ -9,11 +9,7 @@ interface Address {
     postalCode: string;
 };
 
-enum ContactStatus {
-    Active = 'active',
-    Inactive = 'inactive',
-    New = 'new'
-};
+type ContactStatus = 'active'| 'inactive'| 'new';
 
 interface Contact {
     id: number;
@@ -40,5 +36,6 @@ function getBirthDate(contact: Contact) {
 
 let primaryContact: Contact = {
     id: 12345,
-    name: 'Jamie Johnson';
+    name: 'Jamie Johnson',
+    status: 'new',
 };
