@@ -26,12 +26,15 @@ interface Query {
 };
 
 // All properties are optional with the Partial helper
-type ContactQuery = Omit<
+type ContactQuery =
     Partial<
-        Record<keyof Contact, Query>
-    >,
-    'address' | 'status'
->;
+        Pick<
+            Record<keyof Contact, Query>,
+            'id' | 'name'
+        >
+    >;
+
+type RequiredContactQuery = Required<ContactQuery>;
 
 function searchContacts(contacts: Contact[], query: ContactQuery) {
     return contacts.filter(contact => {
