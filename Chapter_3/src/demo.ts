@@ -22,6 +22,9 @@ interface Contact {
     status?: ContactStatus;
 };
 
+// Alternatives
+// interface AdressableContact extends Contact, Address { };
+type AddressableContact = Contact & Address;
 
 function getBirthDate(contact: Contact) {
     if (typeof contact.birthDate === 'number') {
