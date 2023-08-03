@@ -11,18 +11,18 @@ function query<T>(
         for (const property of Object.keys(item)) {
 
             // get the query for this property name
-            const propertyQuery = query[property]
+            const propertyQuery = query[property];
 
             // see if this property value matches the query
             if (propertyQuery && propertyQuery(item[property])) {
-                return true
+                return true;
             }
         }
 
         // nothing matched so return false
-        return false
-    })
-}
+        return false;
+    });
+};
 
 const matches = query(
     [
@@ -32,4 +32,4 @@ const matches = query(
     {
         name: name => name === "Angie",
         age: age => age > 30
-    })
+    });
