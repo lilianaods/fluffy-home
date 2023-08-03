@@ -26,13 +26,17 @@ interface Query {
 };
 
 // All properties are optional with the Partial helper
-type ContactQuery =
-    Partial<
-        Pick<
-            Record<keyof Contact, Query>,
-            'id' | 'name'
-        >
-    >;
+// type ContactQuery =
+//     Partial<
+//         Pick<
+//             Record<keyof Contact, Query>,
+//             'id' | 'name'
+//         >
+//     >;
+
+type ContactQuery = {
+    [TProp in keyof Contact]?: Query
+};
 
 type RequiredContactQuery = Required<ContactQuery>;
 
